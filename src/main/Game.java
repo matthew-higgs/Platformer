@@ -31,6 +31,7 @@ public class Game implements Runnable {
         long lastCheck = System.currentTimeMillis();
 
         while (true) {
+
             now = System.nanoTime();
             if (now - lastFrame >= nanoSecondsPerFrame) {
                 gamePanel.repaint();
