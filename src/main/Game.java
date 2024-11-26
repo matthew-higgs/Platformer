@@ -14,7 +14,6 @@ public class Game implements Runnable {
         startGameLoop();
     }
 
-
     private void startGameLoop() {
         gameThread = new Thread(this);
         gameThread.start();
@@ -23,7 +22,7 @@ public class Game implements Runnable {
     @Override
     public void run() {
 
-        double nanoSecondsPerFrame = 1_000_000_000.0 / FPS_SET;
+        double timePerFrame = 1000000000.0 / FPS_SET;
         long lastFrame = System.nanoTime();
         long now = System.nanoTime();
 
@@ -33,7 +32,7 @@ public class Game implements Runnable {
         while (true) {
 
             now = System.nanoTime();
-            if (now - lastFrame >= nanoSecondsPerFrame) {
+            if (now - lastFrame >= timePerFrame) {
                 gamePanel.repaint();
                 lastFrame = now;
                 frames++;
@@ -44,9 +43,6 @@ public class Game implements Runnable {
                 System.out.println("FPS: " + frames);
                 frames = 0;
             }
-
         }
-
     }
-
 }
