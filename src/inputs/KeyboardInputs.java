@@ -22,49 +22,38 @@ public class KeyboardInputs implements KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
-        switch(e.getKeyCode()){
-            // TODO: case KeyEvent.VK_W:
-            // TODO: case KeyEvent.VK_A:
-            // TODO: case KeyEvent.VK_S:
-            // TODO: case KeyEvent.VK_D:
-            // TODO: the above cases fall through to case VK_D where you do the following
-            // TODO: gamePanel.setMoving(false)
-            // TODO: break;
+        switch (e.getKeyCode()) {
             case KeyEvent.VK_W:
-                gamePanel.setMoving(false);
+                gamePanel.getGame().getPlayer().setUp(true);
                 break;
             case KeyEvent.VK_A:
-                gamePanel.setMoving(false);
+                gamePanel.getGame().getPlayer().setLeft(true);
                 break;
             case KeyEvent.VK_S:
-                gamePanel.setMoving(false);
+                // TODO: similar to W but down
                 break;
             case KeyEvent.VK_D:
-                gamePanel.setMoving(false);
+                // TODO: similar to D but right
                 break;
         }
-
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-        // TODO: don't do anything here.  UP, LEFT, DOWN, and RIGHT come from Constants.  Once you finish them
-        // These shouldn't be red as I've already included the import.  above.
         switch (e.getKeyCode()) {
             case KeyEvent.VK_W:
-                gamePanel.changeYDelta(UP);
+                gamePanel.getGame().getPlayer().setUp(true);
                 break;
             case KeyEvent.VK_A:
-                gamePanel.changeXDelta(LEFT);
+                gamePanel.getGame().getPlayer().setLeft(true);
                 break;
             case KeyEvent.VK_S:
-                gamePanel.changeYDelta(DOWN);
+                // TODO: similar to W but down
                 break;
             case KeyEvent.VK_D:
-                gamePanel.changeXDelta(RIGHT);
+                // TODO: similar to D but right
                 break;
         }
-
     }
 
 }

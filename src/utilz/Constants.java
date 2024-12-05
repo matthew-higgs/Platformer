@@ -10,10 +10,10 @@ public class Constants {
         // TODO: create an int named UP and initialize to 1.
         // TODO: create an int named RIGHT and initialize to 2.
         // TODO: create an int named DOWN and initialize to 3.
-        int LEFT = 0;
-        int UP = 1;
-        int RIGHT = 2;
-        int DOWN = 3;
+        public static final int LEFT = 0;
+        public static final int UP = 1;
+        public static final int RIGHT = 2;
+        public static final int DOWN = 3;
     }
 
     public static class PlayerConstants {
@@ -27,33 +27,19 @@ public class Constants {
         // TODO: create an int named ATTACK_1 and initialize to 6.
         // TODO: create an int named ATTACK_JUMP_1 and initialize to 7.
         // TODO: create an int named ATTACK_JUMP_2 and initialize to 8.
-        int IDLE = 0;
-        int RUNNING = 1;
-        int JUMP = 2;
-        int FALLING = 3;
-        int GROUND = 4;
-        int HIT = 5;
-        int ATTACK_1 = 6;
-        int ATTACK_JUMP_1 = 7;
-        int ATTACK_JUMP_2 = 8;
+        public static final int IDLE = 0;
+        public static final int RUNNING = 1;
+        public static final int JUMP = 2;
+        public static final int FALLING = 3;
+        public static final int GROUND = 4;
+        public static final int HIT = 5;
+        public static final int ATTACK_1 = 6;
+        public static final int ATTACK_JUMP_1 = 7;
+        public static final int ATTACK_JUMP_2 = 8;
 
         public static int GetSpriteAmount(int player_action){
-            // TODO: Note:  the cases without a return are meant to fall through to the first one with a return.
-            // not a mistake.
-            switch(player_action) {
-                // TODO: create a switch statement using switch(player_action)
-                // TODO: case RUNNING: return 6
-                // TODO: case IDLE: return 5
-                // TODO: case HIT: return 4
-                // TODO: case JUMP:
-                // TODO: case ATTACK_1:
-                // TODO: case ATTACK_JUMP_1:
-                // TODO: case ATTACK_JUMP_2: return 3
-                // TODO: case GROUND: return 2
-                // TODO: case FALLING:
 
-                default:
-                    return 1;
+            switch(player_action) {
 
                 case RUNNING:
                     return 6;
@@ -69,6 +55,9 @@ public class Constants {
                 case GROUND:
                     return 2;
                 case FALLING:
+                default:
+                    return 1;
+
             }
         }
     }
